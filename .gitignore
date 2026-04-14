@@ -1,0 +1,31 @@
+# Environment variables
+.env
+.env.*
+
+# Logs
+*.log
+logs/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE / Editor
+.vscode/
+.idea/
+*.iml
+
+# Python (future scripts)
+__pycache__/
+*.pyc
+
+# Node (future)
+node_modules/
+
+# Temp files
+tmp/
+temp/
+
+# Backups
+*.bak
+*.backup
