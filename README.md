@@ -6,6 +6,11 @@ It uses Debezium and Kafka Connect to capture changes from MySQL binlogs and rel
 
 Supports initial snapshot, incremental updates, and delete propagation.
 
+
+This repository provides a locally runnable CDC stack for replicating data from MySQL to PostgreSQL.
+
+In production, the same architecture is typically deployed across multiple hosts or Kubernetes, with clustered Kafka, distributed Kafka Connect workers, highly available PostgreSQL, and monitoring.
+
 ## What This Solves
 
 Many systems rely on operational databases like MySQL for day-to-day transactions, but using the same database for analytics, reporting, or downstream applications creates performance bottlenecks and scalability issues.

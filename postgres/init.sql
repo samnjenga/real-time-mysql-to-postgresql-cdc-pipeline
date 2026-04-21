@@ -1,0 +1,2 @@
+-- Intentionally minimal for v1.
+-- Tables will be created by the JDBC sink connector.

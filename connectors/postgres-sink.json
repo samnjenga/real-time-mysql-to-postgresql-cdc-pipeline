@@ -1,0 +1,25 @@
+{
+  "name": "postgres-sink",
+  "config": {
+    "connector.class": "io.debezium.connector.jdbc.JdbcSinkConnector",
+    "tasks.max": "1",
+
+    "connection.url": "jdbc:postgresql://postgres:5432/appdb_replica",
+    "connection.username": "postgres",
+    "connection.password": "postgres",
+
+    "topics": "mysql_server_1.appdb.customers,mysql_server_1.appdb.orders",
+
+    "insert.mode": "upsert",
+    "delete.enabled": "true",
+    "primary.key.mode": "record_key",
+    "schema.evolution": "basic",
+
+    "table.name.format": "${topic}",
+
+    "transforms": "route",
+    "transforms.route.type": "org.apache.kafka.connect.transforms.RegexRouter",
+    "transforms.route.regex": "mysql_server_1\\.appdb\\.(.*)",
+    "transforms.route.replacement": "$1"
+  }
+}
